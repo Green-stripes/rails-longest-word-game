@@ -1,0 +1,16 @@
+<h1>New game</h1>
+<div class = "d-flex">
+  <% @letters.each do |letter| %>
+  <p><%= letter %></p>
+  <% end %>
+</div>
+
+<form action="/score" method="post" data-turbo="false">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= hidden_field_tag :letters, @letters %>
+    <label class="form-label" for="answer">What is the longest word you can find?</label>
+    <div class="d-flex">
+      <input type="text" name="word" class="form-control" id="answer" placeholder="Type here">
+      <input type="submit">
+    </div>
+</form>

@@ -1,0 +1,12 @@
+<h1>Your score is:</h1>
+
+<% if @include  %>
+<% if @exist %>
+<p>Congratulations!</p>
+<% else  %>
+<p>Sorry but <%= @word %> is not an english word</p>
+<% end %>
+<% else %>
+<p>Sorry but <%= @word %> can't be built out of <%= @letters.join(" ") %></p>
+<% end %>
+<p><%=link_to "New game", new_path%></p>
